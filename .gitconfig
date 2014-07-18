@@ -1,0 +1,16 @@
+[color]
+  ui = auto
+[alias]
+  st = status
+  di = diff
+  ci = commit
+  br = branch
+  llog = log --date=local
+	co = checkout
+[rerere]
+  enabled = true
+[user]
+	name = Martins Berzins
+	email = martins_berzins@inbox.lv
+[credential]
+	helper = store

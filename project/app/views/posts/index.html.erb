@@ -1,0 +1,22 @@
+<h1>List of LTC companies</h1>
+<% @posts.each do |post|  %>
+<div class="row" id = "posts_index_div">
+  <div class="col-lg-9" id="posts_index_div_nested">
+    <h2><%= link_to post.name, post %> </h2>
+    <h4>Ticker: <%= post.ticker %> </h4>
+    <p>Region: <%= post.region %> </p>
+    <p>
+      <%= link_to "Edit" , edit_post_path(post)%> |
+      <%= link_to "Delete" , post, :confirm => "Are you sure?", :method => :delete%>
+    </p>
+  </div>
+  <div class="col-lg-3" id="posts_img_div_nested">
+    <span class="helper"></span><%= image_tag(post.ticker+".jpg", class: "company_logo",  :alt => post.ticker) %>
+  </div>
+    <hr />
+ </div>
+<% end %>
+
+<div class="row" id="div_add_new">
+  <p><%=link_to "Add New Company", new_post_path%></p>
+</div>

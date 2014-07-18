@@ -1,0 +1,23 @@
+#posts_index_div_nested{
+	border-style:none;
+	border-color:red;
+}
+
+#posts_img_div_nested{
+	border-style:none;
+	border-color:yellow;
+  height: 150px;
+  text-align: center
+}
+
+.company_logo{
+  max-width: 100px;
+  vertical-align: middle
+}
+
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}

@@ -1,0 +1,14 @@
+<h1><%= @posts.name%></h1>
+<h2>Ticker: <%= @posts.ticker%></h2>
+<p><%= @posts.description%></p>
+<p>Region: <%= @posts.region%></p>
+<p>WEB: 
+  <% if @posts.website.to_s.length > 0%>
+   <%=link_to @posts.website, "http://"+@posts.website %>
+  <%else%>
+  none
+  <%end%>
+</p>
+<p>Active: <%= @posts.active%></p>
+
+<small><%= @posts.created_at %> </small>
