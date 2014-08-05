@@ -1,0 +1,55 @@
+<h1>Listing programs</h1>
+
+<p>Profils: <span class="selected_conditions"></span></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Statuss</th>
+      <th>Darbības sfēra</th>
+      <th>Vecums</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="condition">Fiziska persona</td>
+      <td class="condition">Lauksaimniecība</td>
+      <td class="condition">Jauns</td>
+    </tr>
+    <tr>
+      <td class="condition">Juridiska persona</td>
+      <td class="condition">Lauksaimniecības produktu pārstrāde</td>
+      <td class="condition">Esošs</td>
+    </tr>
+  </tbody>
+</table>
+  
+<table>
+  <thead>
+    <tr>
+      <th>Nosaukums</th>
+      <th>Nākošais uzsaukums</th>
+      <th>Kritēriji</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+        <tr>
+          <td><%= program.title %></td>
+          <td>NA</td>
+          <td class="td_conditions"><%= program.conditions %></td>
+          <td><%= link_to 'Show', program %></td>
+          <td><%= link_to 'Edit', edit_program_path(program) %></td>
+          <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program', new_program_path %>

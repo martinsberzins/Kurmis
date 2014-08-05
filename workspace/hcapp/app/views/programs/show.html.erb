@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Progamma:</strong>
+  <%= @program.title %>
+</p>
+
+<p>
+  <strong>Prasības pretendentam:</strong>
+  <%= @program.requirements %>
+</p>
+
+<p>
+  <strong>Atbalstāmās izmaksas:</strong>
+  <%= @program.costs %>
+</p>
+
+<p>
+  <strong>Atbalsta %:</strong>
+  <%= @program.support %>
+</p>
+
+<p>
+  <strong>Citi noteikumi:</strong>
+  <%= @program.examples %>
+</p>
+
+<p>
+  <strong>Projekta sagatavošanas izmaksas:</strong>
+  <%= @program.price %>
+</p>
+
+<p>
+  <strong>Nākošais projektu pieņemšanas termiņš:</strong>
+  <%= @program.next_time_from %>
+  <%= @program.next_time_to %>
+</p>
+<p>
+  <strong>Kritēriji:</strong>
+  <%= @program.conditions %>
+</p>
+
+<p>
+  <strong>Administrators:</strong>
+  <%= @program.administrator %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

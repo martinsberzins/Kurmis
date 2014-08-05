@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  requirements: MyString
+  costs: MyString
+  support: 1.5
+  examples: MyText
+  price: 1
+  next_time_from: 2014-08-04
+  next_time_to: 2014-08-04
+  conditions: MyText
+  administrator: MyString
+
+two:
+  title: MyString
+  requirements: MyString
+  costs: MyString
+  support: 1.5
+  examples: MyText
+  price: 1
+  next_time_from: 2014-08-04
+  next_time_to: 2014-08-04
+  conditions: MyText
+  administrator: MyString
