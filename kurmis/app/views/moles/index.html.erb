@@ -1,0 +1,31 @@
+<div class="header"> Mole Run </div>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<div class = "container"> 
+  <!-- divs for colours; to be positioned with css and js -->
+  <div class = "div_color", id = "div_black">100'000</div>
+  <div class = "div_color", id = "div_blue">80'000</div>
+  <div class = "div_color", id = "div_green">60'000</div>
+  <div class = "div_color", id = "div_orange">40'000</div>
+  <div class = "div_color", id = "div_white">20'000</div>
+  
+  <!-- divs for names and scores; to be positioned with js-->
+  <% @moles.each_with_index do |mole, index|%>
+    <div class = "div_mole_name", id = "div_mole_name_<%= index %>" > <%= mole.name%> </div>
+    <div class = "div_mole_score", id = "div_mole_score_<%= index %>" > <%= mole.score%> </div>
+  <% end %>
+</div>
+
+<div class="div_footer">
+  <div class="last_udpate">Last update <%=@last_event.name%> <%=time_ago_in_words(@last_event.updated_at)%> ago</div>
+  <div class="footer_right"><%=mail_to "martins.berzins@harvestconsulting.lv", "Contact" %></div>
+  <% if admin_signed_in? %>
+    <div class = "admin"><%= link_to  "Logout", destroy_admin_session_path, method: :delete %></div>
+    <div class = "admin"><%= link_to 'Admin', events_path %></div>
+  <% else %>
+    <div class = "admin"><%= link_to('Login', new_admin_session_path) %></div>
+  <% end %>  
+</div>

@@ -1,0 +1,31 @@
+<% if admin_signed_in? %>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Url:</strong>
+    <%= @event.url %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @event.name %>
+  </p>
+
+  <p>
+    <strong>Var1:</strong>
+    <%= @event.var1 %>
+  </p>
+
+  <p>
+    <strong>Var2:</strong>
+    <%= @event.var2 %>
+  </p>
+
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/moles"
+  </script>
+<% end %> 

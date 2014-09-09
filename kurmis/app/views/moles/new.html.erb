@@ -1,0 +1,11 @@
+<% if admin_signed_in? %>
+  <h1>New mole</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to 'Back', moles_path %>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/moles"
+  </script>
+<% end %>  

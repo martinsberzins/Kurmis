@@ -1,0 +1,12 @@
+<% if admin_signed_in? %>
+  <h1>Editing event</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @event %> |
+  <%= link_to 'Back', events_path %>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/moles"
+  </script>
+<% end %>  

@@ -1,0 +1,27 @@
+<% if admin_signed_in? %>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @mole.name %>
+  </p>
+
+  <p>
+    <strong>Score:</strong>
+    <%= @mole.score %>
+  </p>
+
+  <p>
+    <strong>Avatar:</strong>
+    <%= @mole.avatar %>
+  </p>
+
+  <%= link_to 'Edit', edit_mole_path(@mole) %> |
+  <%= link_to 'Back', moles_path %>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/moles"
+  </script>
+<% end %>  
+
+

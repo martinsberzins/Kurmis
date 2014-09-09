@@ -1,0 +1,109 @@
+<% if admin_signed_in? %>
+  <div class="header"> Admin </div>
+  <h1>Moles </h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Avatar</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @moles.each do |mole| %>
+        <tr>
+          <td><%= mole.name %></td>
+          <td><%= mole.score %></td>
+          <td><%= mole.avatar %></td>
+          <td><%= link_to 'Show', mole %></td>
+          <td><%= link_to 'Edit', edit_mole_path(mole) %></td>
+          <td><%= link_to 'Destroy', mole, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div><%= link_to 'New Mole', new_mole_path %></div>
+
+  <br>
+
+
+  <h1>New Events</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Url</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |event| %>
+        <% if event.var2 != "analyzed" %>
+          <tr>
+              <td><%= event.url %></td>
+              <td><%= event.name %></td>
+              <td><%= link_to 'Show', event %></td>
+              <td><%= link_to 'Edit', edit_event_path(event) %></td>
+              <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+           </tr>
+         <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <br>
+
+
+  <h1>Past Events</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Url</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |event| %>
+        <% if event.var2 == "analyzed" %>
+          <tr>
+              <td><%= event.url %></td>
+              <td><%= event.name %></td>
+              <td><%= event.var2 %></td>
+              <td><%= link_to 'Show', event %></td>
+              <td><%= link_to 'Edit', edit_event_path(event) %></td>
+              <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+           </tr>
+         <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'New Event', new_event_path %>
+
+  <br>
+
+  <input value="Update" type="button" onclick="window.location = '/analyze_event'">
+
+  <div class="div_footer">
+    <div><%= link_to 'Mole Run', moles_path %></div>
+  </div>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/moles"
+  </script>
+<% end %>  
